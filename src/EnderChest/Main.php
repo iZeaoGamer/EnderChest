@@ -18,7 +18,7 @@ use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase{
 
-	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+	public function onCommand(CommandSender $sender, Command $command, $label, array $args){
 		if(strtolower($command->getName()) === "enderchest"){
 			if(!$sender instanceof Player){
 				$sender->sendMessage(TextFormat::RED . "Use this command in-game");
