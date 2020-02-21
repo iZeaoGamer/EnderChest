@@ -24,6 +24,11 @@ class Main extends PluginBase{
 				$sender->sendMessage(TextFormat::RED . "Use this command in-game");
 				return false;
 			}
+			if(!$sender->hasPermission("enderchest.open")){
+				$sender->sendMessage(TextFormat::colorize("&cYou must be atleast Iron Rank or above to use this command."));
+				return true;
+			}
+       
 			$nbt = new CompoundTag("", [new StringTag("id", Tile::CHEST), new StringTag("CustomName", "EnderChest"), new IntTag("x", (int)floor($sender->x)), new IntTag("y", (int)floor($sender->y) - 4), new IntTag("z", (int)floor($sender->z))]);
 			/** @var EnderChest $tile */
 			$tile = Tile::createTile("EnderChest", $sender->getLevel(), $nbt);
