@@ -24,7 +24,7 @@ class Main extends PluginBase{
 				$sender->sendMessage(TextFormat::RED . "Use this command in-game");
 				return false;
 			}
-			if(!$sender->hasPermission("enderchest.open")){
+			if(!$sender->hasPermission("enderchest.use")){
 				$sender->sendMessage(TextFormat::colorize("&cYou must be atleast Iron Rank or above to use this command."));
 				return true;
 			}
